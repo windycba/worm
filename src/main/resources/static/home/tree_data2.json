@@ -1,0 +1,20 @@
+[{
+    "id": 1,
+    "text": "常用操作",
+    "url":"",
+    "children":[{
+      "id": 3,
+      "text": "双色球",
+      "url":"/common/doubleColorBall.html"
+    },{
+      "id": 4,
+      "text": "视频测试",
+      "url":"/test.html"
+    }]
+  },
+  {
+    "id": 2,
+    "text": "音乐",
+    "url":"index.html"
+  }
+]

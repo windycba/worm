@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理</title>
+    <base href="/">
+    <link rel="stylesheet" type="text/css" href="../resources/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../resources/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="../resources/easyui/themes/color.css">
+    <link rel="stylesheet" type="text/css" href="../resources/easyui/demo/demo.css">
+    <script type="text/javascript" src="../resources/easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="../resources/easyui/jquery.easyui.min.js"></script>
+</head>
+<body class="easyui-layout">
+
+<div region="north" border="false" style="height: 70px;background-color:#378ce1;overflow-y: hidden">
+    <h1>后台管理系统</h1>
+</div>
+<div region="west" split="true" title="菜单" style="width: 200px">
+    <div class="easyui-panel" fit="true">
+        <ul id="mytree" class="easyui-tree" data-options="animate:true,lines:true"></ul>
+    </div>
+</div>
+<!-- 主操作区 -->
+<div region="center" style="background:#eee; overflow-y:hidden">
+    <div id="mainTabs" class="easyui-tabs" fit="true" border="false" >
+    </div>
+</div>
+<script type="text/javascript"  src="/home/home.js"></script>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

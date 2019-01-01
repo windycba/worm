@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>登陆</title>
+    <base href="/">
+    <link rel="stylesheet" type="text/css" href="../resources/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../resources/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="../resources/easyui/themes/color.css">
+    <link rel="stylesheet" type="text/css" href="../resources/easyui/demo/demo.css">
+    <script type="text/javascript" src="../resources/easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="../resources/easyui/jquery.easyui.min.js"></script>
+</head>
+<body class="easyui-layout">
+
+
+
+<!-- 主操作区 -->
+<div region="center" style="background:url('resources/images/bg2.jpg');" >
+    <h1>后台管理系统</h1>
+    <div id="w" class="easyui-panel" title="登陆" data-options="style:{position:'absolute'},iconCls:'Lockgo',top:'40%',left:'40%'" style="width:400px;padding:20px 70px 20px 70px;">
+        <div style="margin-bottom:10px">
+            <input class="easyui-textbox" id="logname" style="width:100%;height:30px;padding:12px" data-options="prompt:'账号',iconCls:'icon-man',iconWidth:38">
+        </div>
+        <div style="margin-bottom:20px">
+            <input class="easyui-textbox" id="logpass" type="password" style="width:100%;height:30px;padding:12px" data-options="prompt:'密码',iconCls:'icon-lock',iconWidth:38">
+        </div>
+        <div style="margin-bottom:20px">
+            <input type="checkbox" checked="checked" id="logrem">
+            <span>记住我</span>
+        </div>
+        <div>
+            <a href="javascript:;" onclick="doLogin()" class="easyui-linkbutton" data-options="iconCls:'icon-ok'" style="padding:5px 0px;width:100%;">
+                <span style="font-size:14px;">登录</span>
+            </a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    document.onkeydown = function (e) {
+        var event = e || window.event;
+        var code = event.keyCode || event.which || event.charCode;
+        if (code == 13) {
+            doLogin();
+        }
+    }
+    $(function () {
+
+    });
+    function doLogin() {
+        var name=$("#logname").val();
+        var password=$("#logpass").val();
+        if ( name== "" ||password  == "") {
+            $.messager.show({
+                height:100,
+                title:'提示',
+                msg:'用户名或密码为空，请输入',
+                timeout:3000,
+                showType:'slide'
+            });
+        } else {
+            $.ajax({
+                type: "POST",
+                url: "login",
+                data: {"name":name,"pwd":password},
+                error: function (request) {      // 设置表单提交出错
+                    $("#showMsg").html(request);  //登录错误提示信息
+                },
+                success: function (data) {
+                    if(data=="success"){
+                        window.location.href = '/home/home.html';
+                    }else{
+                        $.messager.show({
+                            height:100,
+                            title:'错误',
+                            msg:'用户名或密码错误',
+                            timeout:3000,
+                            showType:'slide'
+                        });
+                    }
+
+                }
+            });
+        }
+    }
+</script>
+</body>
+</html>

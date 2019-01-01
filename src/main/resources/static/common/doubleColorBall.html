@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>双色球</title>
+    <base href="/">
+    <link rel="stylesheet" type="text/css" href="../resources/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../resources/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="../resources/easyui/themes/color.css">
+    <link rel="stylesheet" type="text/css" href="../resources/easyui/demo/demo.css">
+    <script type="text/javascript" src="../resources/easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="../resources/easyui/jquery.easyui.min.js"></script>
+</head>
+<body class="easyui-layout">
+    <table id="dg" class="easyui-datagrid" title="统计表">
+    </table>
+    <div class="easyui-window" id="import" title="文件上传" style="width:400px;height:160px;padding:2px;" closed="true">
+            <table style="margin:5px;height:70px;">
+                <tr>
+                    <td>请选择文件</td>
+                    <td width="5px;"></td>
+                    <td><input  id="fileImport"  style="width:260px;"></td>
+                </tr>
+                <tr> <td colspan="4"><label id="fileName" /></td> </tr>
+                <tr> <td colspan="4"> <label id="uploadInfo" /></td> </tr>
+            </table>
+        <div style="text-align:center;clear:both;margin:5px;">
+            <a id="uploadFile" class="easyui-linkbutton" data-options="iconCls:'icon-ok'" onclick="importFileClick()" >上传</a>
+        </div>
+    </div>
+<script type="text/javascript"  src="/common/doubleColorBall.js"></script>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>
