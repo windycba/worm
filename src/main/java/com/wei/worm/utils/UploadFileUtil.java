@@ -1,4 +1,4 @@
-package com.wei.worm.util;
+package com.wei.worm.utils;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;

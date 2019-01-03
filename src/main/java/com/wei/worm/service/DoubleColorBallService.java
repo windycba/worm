@@ -1,11 +1,9 @@
 package com.wei.worm.service;
 
-import com.alibaba.fastjson.JSONObject;
-import com.wei.dao.DoubleColorBallDao;
-import com.wei.entity.DoubleColorBall;
-import com.wei.util.ImportExcel;
-import com.wei.util.Page;
-import com.wei.util.UploadFileUtil;
+import com.wei.worm.dao.DoubleColorBallDao;
+import com.wei.worm.entity.DoubleColorBall;
+import com.wei.worm.utils.ImportExcel;
+import com.wei.worm.utils.UploadFileUtil;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,17 +21,14 @@ public class DoubleColorBallService{
     private ImportExcel importExcel;
     @Autowired
     private UploadFileUtil uploadFileUtil;
+
     public void save(DoubleColorBall doubleColorBall){
         doubleColorBallDao.save(doubleColorBall);
     }
 
-    public Page<DoubleColorBall> query(int pageSize,int pageNo, JSONObject param) {
-        return doubleColorBallDao.query(pageSize,pageNo,param);
-    }
 
-    public void delete(List<Integer> param) {
-         doubleColorBallDao.delete(param);
-    }
+
+
 
     public void doUpload(HttpServletRequest request) {
         String filePath=uploadFileUtil.uploadFile(request);

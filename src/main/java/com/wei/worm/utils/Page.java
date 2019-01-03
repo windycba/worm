@@ -1,4 +1,4 @@
-package com.wei.worm.util;
+package com.wei.worm.utils;
 
 import java.util.List;
 
